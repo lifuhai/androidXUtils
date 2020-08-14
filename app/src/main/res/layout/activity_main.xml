@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.MainActivity">
+
+
+    <Button
+        android:id="@+id/toast"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="吐司"></Button>
+    <Button
+        android:id="@+id/id_card"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="身份证"></Button>
+    <Button
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="手机号"></Button>
+    <Button
+        android:id="@+id/preview"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="预加载view"></Button>
+
+    <Button
+        android:id="@+id/getPacke"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="获取包名"></Button>
+
+
+    <Button
+        android:id="@+id/recyer"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="Recyer"></Button>
+
+    <Button
+        android:id="@+id/mvp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="mvp"></Button>
+    <Button
+        android:id="@+id/First"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="First"></Button>
+    <com.lfh.frame.RoundImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        android:src="@color/colorPrimaryDark"
+        app:shape="circle"></com.lfh.frame.RoundImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:textSize="12sp"
+            android:text="你说你喜欢雨，但是在下雨的时候，你却撑起了伞,
+            \n你说你喜欢风，但清风扑面的时候，你却关上了窗户">
+
+        </TextView>
+    </LinearLayout>
+
+</LinearLayout>

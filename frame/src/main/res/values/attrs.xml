@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="shape">
+            <enum name="circle" value="0" />
+            <enum name="fillet" value="1" />
+        </attr>
+        <attr name="radius" format="dimension" />
+        <attr name="cover_color" format="color" />
+    </declare-styleable>
+    <!--背景、边框、圆角、圆形Layout-->
+    <declare-styleable name="RoundRelativeLayout">
+        <attr name="viewSolidColor" format="color" /><!-- 背景色 -->
+        <attr name="viewStrokeColor" format="color" /><!-- 边框色 -->
+        <attr name="viewStrokeWidth" format="dimension" /><!-- 边框厚度 -->
+        <attr name="viewStrokeDashWidth" format="dimension" /><!-- 边框虚线长度 -->
+        <attr name="viewStrokeDashGap" format="dimension" /><!-- 边框虚线间隙 -->
+        <attr name="viewShapeTpe" format="integer" /><!-- 显示类型 -->
+        <attr name="viewCornerRadius" format="dimension" /><!-- 圆角半径-->
+        <!-- 设置viewCornerRadius后，下面设置无效 -->
+        <attr name="viewTopLeftRadius" format="dimension" />
+        <attr name="viewTopRightRadius" format="dimension" />
+        <attr name="viewBottomLeftRadius" format="dimension" />
+        <attr name="viewBottomRightRadius" format="dimension" />
+    </declare-styleable>
+</resources>
