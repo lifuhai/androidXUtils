@@ -35,7 +35,7 @@ android {
 
     sourceSets {
         main {
-            if (isNeedFirstModule.toBoolean()) {
+            if (!isNeedFirstModule.toBoolean()) {
                 manifest.srcFile 'src/main/debug/AndroidManifest.xml'
             } else {
                 manifest.srcFile 'src/main/release/AndroidManifest.xml'
