@@ -20,7 +20,7 @@ public class MvpTestActivity extends BaseMvpActivity<TestMvpPresenter> {
 
     @Override
     public TestMvpPresenter createPresenter() {
-        return new TestMvpPresenter(this);
+        return new TestMvpPresenter();
     }
 
     @Override
@@ -47,19 +47,5 @@ public class MvpTestActivity extends BaseMvpActivity<TestMvpPresenter> {
 
     }
 
-    @Override
-    public void onSuccess(Object o) {
-        super.onSuccess(o);
 
-        textView.setText(o.toString());
-        ToastMgr.builder.display(o.toString());
-    }
-
-
-    @Override
-    public void onFail(String t) {
-        super.onFail(t);
-        textView.setText("失败" + t.toString());
-
-    }
 }

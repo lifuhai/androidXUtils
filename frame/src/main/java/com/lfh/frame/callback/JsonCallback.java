@@ -84,4 +84,9 @@ public abstract class JsonCallback<T> extends AbsCallback<T> {
         super.onError(response);
 //        ToastMgr.builder.display("請檢查您的網絡環境...");
     }
+
+    @Override
+    public void onSuccess(com.lzy.okgo.model.Response<T> response) {
+
+    }
 }

@@ -8,6 +8,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".TestActivity"></activity>
+        <activity android:name=".SecondActivity"></activity>
+        <activity android:name=".AppbarActivity"></activity>
 
         <activity android:name=".MainActivity">
             <intent-filter>

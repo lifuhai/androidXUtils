@@ -6,8 +6,10 @@
         android:allowBackup="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TestActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".AppbarActivity"></activity>
+        <activity android:name=".SecondActivity" />
+        <activity android:name=".TestActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

@@ -1,29 +1,18 @@
 package com.lfh.frame.base;
 
-public class BasePresenter<V> {
+public class BasePresenter<V extends BaseView> implements BasePresenterImpl<V>{
 
-    protected V view;
+    public V view;
 
 
-    public BasePresenter(V view) {
-        this.view = view;
+    @Override
+    public void attachView(V view) {
+        this.view= view;
     }
 
-
-    protected V getView (){
-        if (view != null) {
-            return view;
-        }
-
-        return null;
-    }
-
-    /**
-     * 当界面已经Destroy时调用
-     */
-    public void detach() {
+    @Override
+    public void detachView() {
         view = null;
         System.gc();
     }
-
 }

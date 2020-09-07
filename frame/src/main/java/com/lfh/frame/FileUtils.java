@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
@@ -169,11 +170,12 @@ public class FileUtils {
             fos.flush();
             fos.close();
             //把文件插入到系统图库
-            //MediaStore.Images.Media.insertImage(context.getContentResolver(), file.getAbsolutePath(), fileName, null);
-            //保存图片后发送广播通知更新数据库
-            /*Uri uri = Uri.fromFile(file);
-            context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri));*/
-            getFilesAllName(storePath);
+            MediaStore.Images.Media.insertImage(context.getContentResolver(), bmp, fileName, null);
+            Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+            Uri uri = Uri.fromFile(file);
+            intent.setData(uri);
+            context.sendBroadcast(intent);
+            file.delete();
             return isSuccess;
         } catch (IOException e) {
             e.printStackTrace();

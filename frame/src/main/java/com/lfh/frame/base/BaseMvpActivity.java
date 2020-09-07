@@ -5,7 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 
 
-public abstract class BaseMvpActivity<P extends BasePresenter> extends BaseActivity  implements ResponseListener {
+public abstract class BaseMvpActivity<P extends BasePresenter> extends BaseActivity  implements BaseView {
     public P mPresenter;
 
     public abstract P createPresenter();
@@ -15,7 +15,9 @@ public abstract class BaseMvpActivity<P extends BasePresenter> extends BaseActiv
         super.onCreate(savedInstanceState);
         setContentView(getContentViewId());
         mPresenter = createPresenter();
+        mPresenter.attachView(this);
         initLocalData();
+
     }
 
 
@@ -35,20 +37,37 @@ public abstract class BaseMvpActivity<P extends BasePresenter> extends BaseActiv
     public void onDestroy() {
         super.onDestroy();
         if (mPresenter != null) {
-            mPresenter.detach();
+            mPresenter.detachView();
             mPresenter = null;
             System.gc();
         }
 
     }
 
-    @Override
-    public void onSuccess(Object o) {
 
+    @Override
+    public void showDataView() {
+        mVaryViewHelper.showDataView();
+    }
+
+
+    @Override
+    public void showEmptyView(String empty) {
+        mVaryViewHelper.showEmptyView(empty.toString());
     }
 
     @Override
-    public void onFail(String t) {
+    public void showErrorView(int error) {
+        mVaryViewHelper.showErrorView(error);
+    }
 
+    @Override
+    public void showErrorView() {
+        mVaryViewHelper.showErrorView();
+    }
+
+    @Override
+    public void showLoadingView() {
+        mVaryViewHelper.showLoadingView();
     }
 }
