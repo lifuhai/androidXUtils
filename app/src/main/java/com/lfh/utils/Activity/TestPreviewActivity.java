@@ -25,6 +25,8 @@ public class TestPreviewActivity extends BaseActivity {
         listView = findViewById(R.id.lv_list);
         mVaryViewHelper.showLoadingView();//预加载
         List<String>list = new ArrayList<>();
+        int c = 3/0;
+        Log.d(TAG, "initView: "+c);
         for (int i = 0; i < 30; i++) {
             list.add("呵呵"+i);
         }

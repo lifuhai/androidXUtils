@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.lfh.frame.ToastMgr;
+import com.lzy.okgo.OkGo;
 
 public class App extends Application {
     @Override
@@ -11,8 +12,9 @@ public class App extends Application {
         super.onCreate();
         initARouter();
         ToastMgr.builder.init(this);
-    }
 
+        OkGo.getInstance().init(this) ;
+    }
     private void initARouter() {
         // 这两行必须写在init之前，否则这些配置在init过程中将无效
         ARouter.openLog();     // 打印日志

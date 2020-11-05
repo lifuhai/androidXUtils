@@ -15,6 +15,9 @@
  */
 package com.lfh.frame.callback;
 
+import android.util.Log;
+
+import com.lfh.frame.ToastMgr;
 import com.lzy.okgo.callback.AbsCallback;
 import com.lzy.okgo.request.base.Request;
 
@@ -27,7 +30,6 @@ import okhttp3.Response;
 public abstract class JsonCallback<T> extends AbsCallback<T> {
 
     private Type type;
-//    private BaseView view;
     private Class<T> clazz;
 
     public JsonCallback() {
@@ -36,9 +38,6 @@ public abstract class JsonCallback<T> extends AbsCallback<T> {
     public JsonCallback(Type type) {
         this.type = type;
     }
-//    public JsonCallback(BaseView view) {
-//        this.view = view;
-//    }
 
     public JsonCallback(Class<T> clazz) {
         this.clazz = clazz;
@@ -82,7 +81,8 @@ public abstract class JsonCallback<T> extends AbsCallback<T> {
     @Override
     public void onError(com.lzy.okgo.model.Response<T> response) {
         super.onError(response);
-//        ToastMgr.builder.display("請檢查您的網絡環境...");
+        ToastMgr.builder.display("請檢查您的網絡環境..."+response.getException().toString());
+
     }
 
     @Override

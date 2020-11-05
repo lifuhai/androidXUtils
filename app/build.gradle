@@ -39,5 +39,6 @@ dependencies {
     if (isNeedFirstModule.toBoolean()) {
         implementation project(path: ':First')
     }
+    implementation 'com.zxy.android:recovery:1.0.0'
 
 }

@@ -2,16 +2,24 @@ package com.lfh.utils;
 
 import android.app.Application;
 import android.os.Handler;
+import android.util.Log;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.lfh.first.TestActivity;
 import com.lfh.frame.ImageUtils;
 import com.lfh.frame.ToastMgr;
+import com.lfh.utils.Activity.MainActivity;
+import com.lfh.utils.Activity.RecyerActivity;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
 import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.lzy.okgo.model.HttpHeaders;
 import com.lzy.okgo.model.HttpParams;
+import com.zxy.recovery.callback.RecoveryCallback;
+import com.zxy.recovery.core.Recovery;
 
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -30,7 +38,48 @@ public class App extends Application {
         ImageUtils.initWindow(this);
         initOkGo();
         initARouter();
+
+
+
+        Recovery.getInstance()
+                .debug(false)
+                .recoverInBackground(false)
+                .recoverStack(true)
+                .mainPage(MainActivity.class)
+                .recoverEnabled(true)
+                .callback(new MyCrashCallback())
+                .silent(false, Recovery.SilentMode.RECOVER_ACTIVITY_STACK  )
+                .skip(TestActivity.class)
+                .init(this);
+        MyCrashHandler.register();
     }
+
+    static final class MyCrashCallback implements RecoveryCallback {
+        @Override
+        public void stackTrace(String exceptionMessage) {
+            Log.e("zxy", "exceptionMessage:" + exceptionMessage);
+        }
+
+        @Override
+        public void cause(String cause) {
+            Log.e("zxy", "cause:" + cause);
+        }
+
+        @Override
+        public void exception(String exceptionType, String throwClassName, String throwMethodName, int throwLineNumber) {
+            Log.e("zxy", "exceptionClassName:" + exceptionType);
+            Log.e("zxy", "throwClassName:" + throwClassName);
+            Log.e("zxy", "throwMethodName:" + throwMethodName);
+            Log.e("zxy", "throwLineNumber:" + throwLineNumber);
+        }
+
+        @Override
+        public void throwable(Throwable throwable) {
+
+        }
+    }
+
+
 
     private void initARouter() {
         // 这两行必须写在init之前，否则这些配置在init过程中将无效
@@ -74,4 +123,27 @@ public class App extends Application {
                 .addCommonParams(params);                       //全局公共参数
     }
 
+
+    /**
+     * Created by zhengxiaoyong on 2017/1/16.
+     */
+    public static class MyCrashHandler implements Thread.UncaughtExceptionHandler {
+
+        private Thread.UncaughtExceptionHandler mUncaughtExceptionHandler;
+
+        public MyCrashHandler() {
+            mUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
+        }
+
+        @Override
+        public void uncaughtException(Thread t, Throwable e) {
+            Log.e("zxy", "myCrashHandler...");
+            mUncaughtExceptionHandler.uncaughtException(t, e);
+        }
+
+
+        public  static  void register() {
+            Thread.setDefaultUncaughtExceptionHandler(new MyCrashHandler());
+        }
+    }
 }

@@ -47,7 +47,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
             case R.id.preview:
 
-                startActivity(new Intent(this, TestPreviewActivity.class));
+                startActivity(new Intent(this, ChouJiangActivity.class));
                 break;
             case R.id.First:
 

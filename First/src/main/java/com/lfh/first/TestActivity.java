@@ -33,6 +33,7 @@ public class TestActivity extends BaseMvpActivity<MainPresenter> implements Main
     @Override
     protected void initLocalData() {
         mPresenter.getNetData("01");
+
     }
 
     @Override
