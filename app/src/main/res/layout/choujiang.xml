@@ -24,7 +24,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="20dp"
+           >
 
 
             <ImageView
@@ -150,7 +151,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="钱"></TextView>
+                android:text="手机"></TextView>
         </LinearLayout>
 
         <View

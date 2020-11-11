@@ -32,7 +32,7 @@ import java.util.Random;
 public class ChouJiangView extends LinearLayout {
 
 
-    private String[] mPrizeDescription = {"币", "券", "狗粮", "券", "iphone12", "卡", "京东卡", "免费券", "iphone12"};
+    private String[] mDetailContant = {"币", "券", "狗粮", "券", "iphone12", "卡", "京东卡", "免费券", "iphone12"};
 
 
     private LinearLayout l9;
@@ -46,7 +46,7 @@ public class ChouJiangView extends LinearLayout {
     private LinearLayout l7;
     private Paint mPaint;
     private int mRepeatCount = 2; // 转的圈数
-    private int mLuckNum = 2; // 默认最终6奖位置
+    private int mLuckNum = 2; // 默认最终中奖位置
 
     public ChouJiangView(Context context) {
         super(context);
@@ -101,7 +101,7 @@ public class ChouJiangView extends LinearLayout {
             if (p == x) {
                 view.setBackgroundColor(Color.BLUE);
             } else {
-                view.setBackgroundColor(Color.YELLOW); // 标记当前转盘经过的位置
+                view.setBackgroundColor(Color.WHITE); // 标记当前转盘经过的位置
             }
         }
 //       addViews();
@@ -113,12 +113,12 @@ public class ChouJiangView extends LinearLayout {
         mView.add(l1);
         mView.add(l2);
         mView.add(l3);
+        mView.add(l6);
+        mView.add(l9);
+        mView.add(l8);
+        mView.add(l7);
         mView.add(l4);
         mView.add(l5);
-        mView.add(l6);
-        mView.add(l7);
-        mView.add(l8);
-        mView.add(l9);
 
     }
 
@@ -152,7 +152,7 @@ public class ChouJiangView extends LinearLayout {
 //                super.onAnimationEnd(animation);
                 mShouldStartNextTurn = true;
                 mStartLuckPosition = mLuckNum;
-                ToastMgr.builder.display("g恭喜你中奖了" + mPrizeDescription[mLuckNum]);
+                ToastMgr.builder.display("g恭喜你中奖了" + mDetailContant[mLuckNum]);
             }
         });
 
