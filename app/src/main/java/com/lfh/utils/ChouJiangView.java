@@ -62,7 +62,7 @@ public class ChouJiangView extends LinearLayout {
 
     private List<LinearLayout> mView; // 存储view的集合
 
-    public boolean mShouldStartNextTurn = true; // 标记是否应该开启下一轮抽奖
+    public boolean mNext = true; // 标记是否应该开启下一轮抽奖
     private int mStartLuckPosition = 0; // 开始抽奖的位置
 
     private void initView(Context context) {
@@ -127,7 +127,7 @@ public class ChouJiangView extends LinearLayout {
     }
 
     public void startAnim() {
-        if (!mShouldStartNextTurn) {
+        if (!mNext) {
             return;
         }
         Random random = new Random();
@@ -141,8 +141,8 @@ public class ChouJiangView extends LinearLayout {
             public void onAnimationUpdate(ValueAnimator animation) {
                 final int position = (int) animation.getAnimatedValue();
                 Log.d("TAG", "onAnimationUpdate: " + position);
-                setCurrentPosition(position % 9);
-                mShouldStartNextTurn = false;
+                setColor(position % 9);
+                mNext = false;
             }
         });
 
@@ -150,7 +150,7 @@ public class ChouJiangView extends LinearLayout {
             @Override
             public void onAnimationEnd(Animator animation) {
 //                super.onAnimationEnd(animation);
-                mShouldStartNextTurn = true;
+                mNext = true;
                 mStartLuckPosition = mLuckNum;
                 ToastMgr.builder.display("g恭喜你中奖了" + mDetailContant[mLuckNum]);
             }
@@ -160,11 +160,6 @@ public class ChouJiangView extends LinearLayout {
         animator.start();
     }
 
-    private void setCurrentPosition(int position) {
-        Log.d("TAG", "onAnimationUpdate:取摸后 " + position);
 
-
-        setColor(position);
-    }
 
 }
