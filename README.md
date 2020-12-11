@@ -2,7 +2,14 @@
 组件化之间跳转用的阿里路由方式跳转、
 封装了一些常用工具类集合、吐司、预加载view 、 万能适配器 等
 
-#预加载view   base里面封装此方法
+# 九宫格抽奖效果
+
+效果展示
+主要代码在app模块下面
+
+![在这里插入图片描述](https://im4.ezgif.com/tmp/ezgif-4-e0384d432b45.gif)
+
+# 预加载view   base里面封装此方法
 
     public void hold(int id) {
         mVaryViewHelper = new VaryViewHelper.Builder()
@@ -25,12 +32,5 @@
             mVaryViewHelper.showErrorView(R.drawable.bg_btn);
             mVaryViewHelper.showEmptyView("11111");
 
-#九宫格抽奖效果
 
-
-效果展示
-
-主要代码在app模块下面
-
-![在这里插入图片描述](https://im4.ezgif.com/tmp/ezgif-4-e0384d432b45.gif)
 
