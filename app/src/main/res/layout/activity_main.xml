@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@android:color/white"
     tools:context=".Activity.MainActivity">
 
 
@@ -52,6 +53,11 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:text="First"></Button>
+    <Button
+        android:id="@+id/luckNumber"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="抽獎"></Button>
     <com.lfh.frame.RoundImageView
         android:layout_width="60dp"
         android:layout_height="60dp"

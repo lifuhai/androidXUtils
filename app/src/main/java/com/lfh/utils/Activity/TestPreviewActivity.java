@@ -24,13 +24,12 @@ public class TestPreviewActivity extends BaseActivity {
         hold(R.id.linear);//绑定view
         listView = findViewById(R.id.lv_list);
         mVaryViewHelper.showLoadingView();//预加载
-        List<String>list = new ArrayList<>();
-        int c = 3/0;
-        Log.d(TAG, "initView: "+c);
+        List<String> list = new ArrayList<>();
+
         for (int i = 0; i < 30; i++) {
-            list.add("呵呵"+i);
+            list.add("呵呵" + i);
         }
-        adapter = new TestAdapter(list,this,R.layout.item_list);
+        adapter = new TestAdapter(list, this, R.layout.item_list);
         listView.setAdapter(adapter);
 
         new Thread(new Runnable() {
@@ -55,11 +54,10 @@ public class TestPreviewActivity extends BaseActivity {
     }
 
 
-
     @Override
     public void initData() {
 
-            mVaryViewHelper.showDataView();
+        mVaryViewHelper.showDataView();
 
     }
 
@@ -73,4 +71,6 @@ public class TestPreviewActivity extends BaseActivity {
         super.onDestroy();
         listView = null;
     }
+
+
 }

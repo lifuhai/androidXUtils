@@ -22,6 +22,8 @@ public class TestMvpPresenter extends BasePresenter<MvpTestActivity> {
                     @Override
                     public void onSuccess(Response<Test> response) {
                         view.showDataView();
+
+                        view.successGetDetail(response);
                     }
 
                     @Override
@@ -34,6 +36,7 @@ public class TestMvpPresenter extends BasePresenter<MvpTestActivity> {
                         super.onError(response);
 
                         view.showErrorView();
+                        view.failReason("11111"+response.getException());
                     }
                 });
     }

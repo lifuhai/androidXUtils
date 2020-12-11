@@ -35,10 +35,13 @@ dependencies {
     implementation rootProject.ext.dependencies["okgo"]
     implementation rootProject.ext.dependencies["readystatesoftware"]
     implementation rootProject.ext.dependencies["arouter-api"]
+    implementation rootProject.ext.dependencies["ultimatebarx"]
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
     if (isNeedFirstModule.toBoolean()) {
         implementation project(path: ':First')
     }
+    //异常恢复
     implementation 'com.zxy.android:recovery:1.0.0'
+
 
 }

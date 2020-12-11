@@ -14,6 +14,7 @@ import com.lfh.frame.TimeUtils;
 import com.lfh.frame.ToastMgr;
 import com.lfh.frame.ZhengZe_ID_And_Phone;
 import com.lfh.frame.base.BaseActivity;
+import com.lfh.utils.ChouJiangView;
 import com.lfh.utils.R;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
@@ -47,7 +48,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
             case R.id.preview:
 
-                startActivity(new Intent(this, ChouJiangActivity.class));
+                startActivity(new Intent(this, TestPreviewActivity.class));
                 break;
             case R.id.First:
 
@@ -67,6 +68,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
                 startActivity(new Intent(this, MvpTestActivity.class));
                 break;
+            case R.id.luckNumber:
+
+                startActivity(new Intent(this, ChouJiangActivity.class));
+                break;
         }
     }
 
@@ -81,6 +86,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.recyer).setOnClickListener(this);
         findViewById(R.id.mvp).setOnClickListener(this);
         findViewById(R.id.First).setOnClickListener(this);
+        findViewById(R.id.luckNumber).setOnClickListener(this);
     }
 
     @Override

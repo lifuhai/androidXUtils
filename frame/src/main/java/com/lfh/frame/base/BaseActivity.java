@@ -1,6 +1,7 @@
 package com.lfh.frame.base;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.lfh.frame.R;
 import com.lfh.frame.preview.VaryViewHelper;
+import com.zackratos.ultimatebarx.library.UltimateBarX;
 
-public  abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     public Context mContext;
     public VaryViewHelper mVaryViewHelper;
@@ -20,14 +22,19 @@ public  abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getContentViewId());
-        mContext=this;
+        mContext = this;
         initView();
+        UltimateBarX.with(this)
+                .color(Color.WHITE)
+                .light(true)
+                .applyStatusBar();
+
 
     }
 
     protected abstract void initView();
 
-    protected   abstract  void initData();
+    protected abstract void initData();
 
     protected abstract int getContentViewId();
 

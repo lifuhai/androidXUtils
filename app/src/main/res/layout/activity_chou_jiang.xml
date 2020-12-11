@@ -5,11 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/yurisa_01"
     tools:context=".Activity.ChouJiangActivity">
 
     <com.lfh.utils.ChouJiangView
         android:id="@+id/choujiang"
         android:layout_width="match_parent"
+        android:layout_marginTop="100dp"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints"></com.lfh.utils.ChouJiangView>
 
