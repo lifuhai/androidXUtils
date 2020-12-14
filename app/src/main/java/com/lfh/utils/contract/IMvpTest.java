@@ -8,7 +8,16 @@ import java.util.List;
  */
 
 public interface IMvpTest {
-    void successGetDetail(Object data);
 
-    void  failReason(String fail);
+
+    interface View {
+        void successGetDetail(Object data);
+
+        void failReason(String fail);
+    }
+
+    interface Presenter {
+
+        void onClick(String json);
+    }
 }

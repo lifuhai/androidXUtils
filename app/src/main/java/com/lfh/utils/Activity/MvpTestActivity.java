@@ -17,7 +17,7 @@ import com.lfh.utils.presenter.TestMvpPresenter;
 
 import java.util.List;
 
-public class MvpTestActivity extends BaseMvpActivity<TestMvpPresenter>  implements IMvpTest {
+public class MvpTestActivity extends BaseMvpActivity<TestMvpPresenter>  implements IMvpTest.View{
 
     private TextView textView;
 
