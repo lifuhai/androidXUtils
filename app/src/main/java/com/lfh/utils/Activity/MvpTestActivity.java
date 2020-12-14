@@ -1,21 +1,13 @@
 package com.lfh.utils.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
 import com.lfh.frame.ToastMgr;
 import com.lfh.frame.base.BaseMvpActivity;
 import com.lfh.utils.R;
 import com.lfh.utils.contract.IMvpTest;
-import com.lfh.utils.mode.TestJson;
+import com.lfh.utils.mode.request.TestJson;
 import com.lfh.utils.presenter.TestMvpPresenter;
-
-import java.util.List;
 
 public class MvpTestActivity extends BaseMvpActivity<TestMvpPresenter>  implements IMvpTest.View{
 

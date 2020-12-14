@@ -1,6 +1,4 @@
-package com.lfh.utils.mode;
-
-import java.util.List;
+package com.lfh.utils.mode.receive;
 
 public class Test {
 

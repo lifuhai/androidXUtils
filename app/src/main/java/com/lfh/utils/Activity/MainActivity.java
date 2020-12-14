@@ -14,7 +14,6 @@ import com.lfh.frame.TimeUtils;
 import com.lfh.frame.ToastMgr;
 import com.lfh.frame.ZhengZe_ID_And_Phone;
 import com.lfh.frame.base.BaseActivity;
-import com.lfh.utils.ChouJiangView;
 import com.lfh.utils.R;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {

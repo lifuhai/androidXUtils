@@ -1,11 +1,10 @@
 package com.lfh.utils.presenter;
 
-import com.lfh.frame.ToastMgr;
 import com.lfh.frame.base.BasePresenter;
 import com.lfh.frame.callback.JsonCallback;
 import com.lfh.utils.Activity.MvpTestActivity;
 import com.lfh.utils.contract.IMvpTest;
-import com.lfh.utils.mode.Test;
+import com.lfh.utils.mode.receive.Test;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheMode;
 import com.lzy.okgo.model.Response;
@@ -30,7 +29,6 @@ public class TestMvpPresenter extends BasePresenter<MvpTestActivity>  implements
                     @Override
                     public void onError(Response<Test> response) {
                         super.onError(response);
-
                         view.showErrorView();
                         view.failReason("11111"+response.getException());
                     }
