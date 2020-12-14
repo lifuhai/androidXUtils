@@ -1,8 +1,9 @@
 package com.lfh.utils.mode.request;
 
-import com.lfh.utils.mode.BaseJSon;
 
-public class TestJson extends BaseJSon {
+import com.lfh.utils.mode.BaseJson;
+
+public class TestJson extends BaseJson {
 
 
 
