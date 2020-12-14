@@ -69,7 +69,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.luckNumber:
 
-                startActivity(new Intent(this, ChouJiangActivity.class));
+                startActivity(new Intent(this, LuckActivity.class));
                 break;
         }
     }

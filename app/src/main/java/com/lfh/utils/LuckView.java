@@ -26,7 +26,7 @@ import java.util.Random;
  * on 2020/11/5
  */
 
-public class ChouJiangView extends LinearLayout {
+public class LuckView extends LinearLayout {
 
 
     private String[] mDetailContant = {"币", "券", "狗粮", "券", "iphone12", "卡", "京东卡", "免费券", "iphone12"};
@@ -45,13 +45,13 @@ public class ChouJiangView extends LinearLayout {
     private int mRepeatCount = 2; // 转的圈数
     private int mLuckNum = 2; // 默认最终中奖位置
 
-    public ChouJiangView(Context context) {
+    public LuckView(Context context) {
         super(context);
         initView(context);
 
     }
 
-    public ChouJiangView(Context context, @Nullable AttributeSet attrs) {
+    public LuckView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         initView(context);
 

@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/yurisa_01"
-    tools:context=".Activity.ChouJiangActivity">
+    tools:context=".Activity.LuckActivity">
 
-    <com.lfh.utils.ChouJiangView
+    <com.lfh.utils.LuckView
         android:id="@+id/choujiang"
         android:layout_width="match_parent"
         android:layout_marginTop="100dp"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"></com.lfh.utils.ChouJiangView>
+        tools:ignore="MissingConstraints"></com.lfh.utils.LuckView>
 
     <TextView
         android:id="@+id/tv_text111"

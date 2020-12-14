@@ -4,13 +4,13 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.lfh.frame.base.BaseActivity;
-import com.lfh.utils.ChouJiangView;
+import com.lfh.utils.LuckView;
 import com.lfh.utils.R;
 import com.zackratos.ultimatebarx.library.UltimateBarX;
 
-public class ChouJiangActivity extends BaseActivity {
+public class LuckActivity extends BaseActivity {
 
-    private ChouJiangView v1;
+    private LuckView v1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

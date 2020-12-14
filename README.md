@@ -5,7 +5,7 @@
 # 九宫格抽奖效果
 
 效果展示
-主要代码在app模块下面
+主要代码在app模块LuckView
 
 ![在这里插入图片描述](https://im4.ezgif.com/tmp/ezgif-4-e0384d432b45.gif)
 
