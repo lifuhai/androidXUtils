@@ -54,5 +54,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mVaryViewHelper != null) {
+            mVaryViewHelper.releaseVaryView();
+        }
 
+    }
 }

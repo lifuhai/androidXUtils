@@ -1,6 +1,7 @@
 package com.lfh.frame.preview;
 
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,6 +15,7 @@ import com.bumptech.glide.load.resource.gif.GifDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.lfh.frame.R;
+import com.lfh.frame.utils.LogUtils;
 
 
 public class VaryViewHelper {
@@ -36,7 +38,6 @@ public class VaryViewHelper {
     /**
      * 正在加载页面的进度环
      */
-//    public ProgressWheel mLoadingProgress;
     public ImageView imageView;
 
 
@@ -104,13 +105,13 @@ public class VaryViewHelper {
 
     public void showErrorView() {
         mViewHelper.showCaseLayout(mErrorView);
-//        stopProgressLoading();
     }
 
     public void showErrorView(int backgroundRes) {
         mViewHelper.showCaseLayout(mErrorView);
         btn.setBackgroundResource(backgroundRes);
     }
+
     public void showLoadingView() {
         mViewHelper.showCaseLayout(mLoadingView);
         startProgressLoading();
@@ -118,26 +119,11 @@ public class VaryViewHelper {
 
     public void showDataView() {
         mViewHelper.restoreLayout();
-        //        stopProgressLoading();
     }
 
 
     private void startProgressLoading() {
-        Glide.with(imageView.getContext()).load(R.drawable.loading).listener(new RequestListener<Drawable>() {
-            @Override
-            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                return false;
-            }
-
-            @Override
-            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                if (resource instanceof GifDrawable) {
-                    //加载一次
-//                    ((GifDrawable) resource).setLoopCount(1);
-                }
-                return false;
-            }
-        })
+        Glide.with(imageView.getContext()).asGif().load(R.drawable.loading)
                 .into(imageView);
     }
 

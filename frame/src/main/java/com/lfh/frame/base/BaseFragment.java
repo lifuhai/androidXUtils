@@ -58,5 +58,9 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        if (mVaryViewHelper != null) {
+            mVaryViewHelper.releaseVaryView();
+        }
+
     }
 }

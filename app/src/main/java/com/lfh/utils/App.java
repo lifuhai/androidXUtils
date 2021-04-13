@@ -27,13 +27,13 @@ public class App extends Application {
 
 
         Recovery.getInstance()
-                .debug(true)
+                .debug(false)
                 .recoverInBackground(false)
                 .recoverStack(true)
                 .mainPage(MainActivity.class)
                 .recoverEnabled(true)
                 .callback(new MyCrashCallback())
-                .silent(false, Recovery.SilentMode.RECOVER_ACTIVITY_STACK  )
+                .silent(!BuildConfig.DEBUG, Recovery.SilentMode.RESTART_AND_CLEAR   )
                 .skip(TestActivity.class)
                 .init(this);
         MyCrashHandler.register();
