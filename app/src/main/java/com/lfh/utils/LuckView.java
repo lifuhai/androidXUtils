@@ -14,8 +14,8 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 
-import com.lfh.frame.ImageUtils;
-import com.lfh.frame.ToastMgr;
+import com.lfh.frame.utils.ImageUtils;
+import com.lfh.frame.utils.ToastMgr;
 
 import java.util.ArrayList;
 import java.util.List;

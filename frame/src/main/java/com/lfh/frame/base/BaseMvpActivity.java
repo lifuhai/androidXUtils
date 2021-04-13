@@ -1,11 +1,14 @@
 package com.lfh.frame.base;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
+import com.lfh.frame.mvp.BasePresenterImp;
 
-public abstract class BaseMvpActivity<P extends BasePresenter> extends BaseActivity  implements BaseView {
+
+public abstract class BaseMvpActivity<P extends BasePresenterImp> extends BaseActivity implements BaseView {
     public P mPresenter;
 
     public abstract P createPresenter();
@@ -21,9 +24,9 @@ public abstract class BaseMvpActivity<P extends BasePresenter> extends BaseActiv
     }
 
 
-
     @Override
     protected abstract int getContentViewId();
+
     protected abstract void initLocalData();
 
 
@@ -35,13 +38,10 @@ public abstract class BaseMvpActivity<P extends BasePresenter> extends BaseActiv
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
         if (mPresenter != null) {
             mPresenter.detachView();
-            mPresenter = null;
-            System.gc();
         }
-
+        super.onDestroy();
     }
 
 
@@ -70,4 +70,11 @@ public abstract class BaseMvpActivity<P extends BasePresenter> extends BaseActiv
     public void showLoadingView() {
         mVaryViewHelper.showLoadingView();
     }
+
+
+    @Override
+    public Context getMContext() {
+        return mContext;
+    }
+
 }

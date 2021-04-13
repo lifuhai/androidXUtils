@@ -1,25 +1,21 @@
 package com.lfh.first;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Build;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
+
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.bumptech.glide.Glide;
 import com.github.gcacace.signaturepad.views.SignaturePad;
-import com.lfh.first.presenter.SecondPresenter;
-import com.lfh.frame.FileUtils;
-import com.lfh.frame.ToastMgr;
+import com.lfh.first.presenter.MainPresenter;
 import com.lfh.frame.base.BaseMvpActivity;
-import com.lfh.frame.callback.ResponseListener;
+import com.lfh.frame.utils.FileUtils;
+import com.lfh.frame.utils.ToastMgr;
 
 @Route(path = "/second/test")
-public class SecondActivity extends BaseMvpActivity<SecondPresenter>  {
+public class SecondActivity extends BaseMvpActivity<MainPresenter>  {
 
 
     private TextView textView;
@@ -30,8 +26,8 @@ public class SecondActivity extends BaseMvpActivity<SecondPresenter>  {
     }
 
     @Override
-    public SecondPresenter createPresenter() {
-        return new SecondPresenter();
+    public MainPresenter createPresenter() {
+        return new MainPresenter();
     }
 
     @Override
@@ -47,10 +43,6 @@ public class SecondActivity extends BaseMvpActivity<SecondPresenter>  {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mPresenter.onCick();
-
-
-
 
            boolean b    = FileUtils.saveImageToGallery(mContext,mSignaturePad.getSignatureBitmap());
                 ToastMgr.builder.display("cccccccc"+b);

@@ -8,4 +8,6 @@ public interface BaseView {
     void  showEmptyView(String empty);
     void  showErrorView(int  error);
     void  showErrorView();
+    Context getMContext();
+
 }

@@ -9,10 +9,10 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.lfh.frame.PackageUtil;
-import com.lfh.frame.TimeUtils;
-import com.lfh.frame.ToastMgr;
-import com.lfh.frame.ZhengZe_ID_And_Phone;
+import com.lfh.frame.utils.PackageUtil;
+import com.lfh.frame.utils.TimeUtils;
+import com.lfh.frame.utils.ToastMgr;
+import com.lfh.frame.utils.ZhengZe_ID_And_Phone;
 import com.lfh.frame.base.BaseActivity;
 import com.lfh.utils.R;
 

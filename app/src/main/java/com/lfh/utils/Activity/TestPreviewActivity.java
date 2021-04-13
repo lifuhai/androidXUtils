@@ -1,13 +1,10 @@
 package com.lfh.utils.Activity;
 
 
-import android.os.Bundle;
-import android.util.Log;
 import android.widget.ListView;
 
 import com.lfh.frame.base.BaseActivity;
 import com.lfh.utils.R;
-import com.lfh.utils.adapter.TestAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +13,6 @@ public class TestPreviewActivity extends BaseActivity {
 
     private static final String TAG = "TestPreviewActivity";
     private ListView listView;
-    private TestAdapter adapter;
 
 
     @Override
@@ -29,8 +25,7 @@ public class TestPreviewActivity extends BaseActivity {
         for (int i = 0; i < 30; i++) {
             list.add("呵呵" + i);
         }
-        adapter = new TestAdapter(list, this, R.layout.item_list);
-        listView.setAdapter(adapter);
+
 
         new Thread(new Runnable() {
             @Override

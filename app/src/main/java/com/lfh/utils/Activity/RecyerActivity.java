@@ -1,17 +1,9 @@
 package com.lfh.utils.Activity;
 
-import android.os.Bundle;
-import android.view.View;
-
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.lfh.frame.RecyerAdapter.BaseRecyerAdapter;
-import com.lfh.frame.RecyerAdapter.GridSpaceItemDecoration;
-import com.lfh.frame.ToastMgr;
 import com.lfh.frame.base.BaseActivity;
 import com.lfh.utils.R;
-import com.lfh.utils.adapter.RecyerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,26 +34,7 @@ public class RecyerActivity extends BaseActivity {
         /**
          *   gird 分割线
          */
-        recyclerView.setLayoutManager(new GridLayoutManager(this,3));
-        GridSpaceItemDecoration itemDecoration = new GridSpaceItemDecoration(3, 20, false);
 
-        recyclerView.addItemDecoration(itemDecoration);
-
-
-        RecyerAdapter adapter = new RecyerAdapter(this,list);
-        recyclerView.setAdapter(adapter);
-        adapter.setOnItemClickListener(new BaseRecyerAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, RecyclerView.ViewHolder holder, int position) {
-                ToastMgr.builder.display("ccccccccccccc"+position);
-            }
-
-            @Override
-            public boolean onItemLongClick(View view, RecyclerView.ViewHolder holder, int position) {
-                ToastMgr.builder.display("ccccccccccc长摁"+position);
-                return true;
-            }
-        });
 
     }
 

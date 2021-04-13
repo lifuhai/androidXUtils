@@ -9,7 +9,7 @@ android {
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
+        flavorDimensions "default"
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
@@ -22,6 +22,37 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            minifyEnabled false
+            proguardFiles 'proguard-rules.pro'
+        }
+    }
+
+
+
+    // 自定义apk输出路径和文件名，as3.0需要修改为一下写法
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+
+            if (!variant.buildType.isDebuggable()) {
+                // 自定义输出路径
+                variant.getPackageApplicationProvider().get().outputDirectory = new File("D:\\android\\apk\\供应商\\${variant.flavorName}")
+                // 自定义文件名{示例：app-Flavor-debug-v1.0.0
+                outputFileName = "supplier-${variant.buildType.name}-v${variant.versionCode}-v${variant.versionName}.apk"
+            }
+        }
+    }
+
+    productFlavors {
+        dev {
+            buildConfigField "String", "HTTP_HOST", rootProject.ext.debugurl["HTTP_HOST"]
+            buildConfigField "String", "HTTP_H5_URL", rootProject.ext.debugurl["HTTP_H5_URL"]
+        }
+
+        online {
+            buildConfigField "String", "HTTP_HOST", rootProject.ext.url["HTTP_HOST"]
+            buildConfigField "String", "HTTP_H5_URL", rootProject.ext.url["HTTP_H5_URL"]
+        }
     }
 }
 
@@ -32,10 +63,18 @@ dependencies {
     implementation project(path: ':frame')
 //    implementation 'com.github.lifuhai:Utils:1.2'
     implementation rootProject.ext.dependencies["recyclerview"]
-    implementation rootProject.ext.dependencies["okgo"]
-    implementation rootProject.ext.dependencies["readystatesoftware"]
     implementation rootProject.ext.dependencies["arouter-api"]
     implementation rootProject.ext.dependencies["ultimatebarx"]
+
+    implementation rootProject.ext.dependencies["okhttp"]
+    implementation rootProject.ext.dependencies["interceptor"]
+    implementation rootProject.ext.dependencies["retrofit"]
+    implementation rootProject.ext.dependencies["gson"]
+    implementation rootProject.ext.dependencies["rxjava_adapter"]
+    implementation rootProject.ext.dependencies["rxjava"]
+    implementation rootProject.ext.dependencies["rxandroid"]
+
+
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
     if (isNeedFirstModule.toBoolean()) {
         implementation project(path: ':First')

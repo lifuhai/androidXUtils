@@ -58,12 +58,12 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:text="抽獎"></Button>
-    <com.lfh.frame.RoundImageView
+    <com.lfh.frame.utils.RoundImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:scaleType="centerCrop"
         android:src="@color/colorPrimaryDark"
-        app:shape="circle"></com.lfh.frame.RoundImageView>
+        app:shape="circle"></com.lfh.frame.utils.RoundImageView>
 
     <LinearLayout
         android:layout_width="match_parent"

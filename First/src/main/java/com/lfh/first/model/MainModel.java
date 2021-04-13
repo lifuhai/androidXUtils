@@ -1,8 +1,13 @@
 package com.lfh.first.model;
 
 import com.lfh.first.contract.MainContract;
-import com.lzy.okgo.OkGo;
+import com.lfh.frame.mvp.BaseModelImpl;
 
-public class MainModel implements MainContract.Model {
-
+/**
+ * author : lfh
+ * date   : 2021/4/1211:44
+ * desc   :
+ * version:
+ */
+public class MainModel extends BaseModelImpl implements MainContract.Model {
 }
