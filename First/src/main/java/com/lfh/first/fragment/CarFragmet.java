@@ -61,7 +61,7 @@ public class CarFragmet extends BaseMvpFragment<MainPresenter>implements  BaseVi
         view.findViewById(R.id.tv_text).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mVaryViewHelper.showEmptyView("哈哈哈哈");
+                mVaryViewHelper.showEmptyView("哈哈哈哈我是空view");
             }
         });
     }

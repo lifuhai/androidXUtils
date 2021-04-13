@@ -20,7 +20,7 @@
         <TextView
             android:id="@+id/tv_text"
             android:layout_width="match_parent"
-            android:text="你好预加载view"
+            android:text="我是有结果的页面"
             android:gravity="center_vertical"
             android:layout_height="match_parent"></TextView>
 
