@@ -8,8 +8,6 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
-/**
- */
 
 public abstract class BasePresenterImp<V extends BaseView, M extends BaseModel> implements BasePresenter<V, M>{
     /**弱引用, 防止内存泄漏*/
