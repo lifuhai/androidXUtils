@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:id="@+id/linear"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".Activity.MvpTestActivity">
 
@@ -15,4 +16,11 @@
         android:text="测试NVP"
         android:gravity="center"
        ></TextView>
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_gray"></ImageView>
 </LinearLayout>

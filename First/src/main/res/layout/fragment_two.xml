@@ -6,5 +6,6 @@
         android:id="@+id/tv_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="4444444444444444"></TextView>
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:text="@string/tv_number"></TextView>
 </LinearLayout>

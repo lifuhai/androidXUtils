@@ -4,25 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/yurisa_01"
+    android:orientation="vertical"
     tools:context=".Activity.LuckActivity">
 
     <com.lfh.utils.LuckView
         android:id="@+id/choujiang"
         android:layout_width="match_parent"
-        android:layout_marginTop="100dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         tools:ignore="MissingConstraints"></com.lfh.utils.LuckView>
 
     <TextView
         android:id="@+id/tv_text111"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="抽奖"
-        android:gravity="center"
-        android:textColor="#f00"
         android:background="@color/recovery_background"
-        ></TextView>
+        android:gravity="center"
+        android:text="抽奖"
+        android:textColor="#f00"></TextView>
 
 </LinearLayout>

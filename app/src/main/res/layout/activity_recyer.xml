@@ -7,13 +7,12 @@
     tools:context=".Activity.RecyerActivity">
 
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </androidx.recyclerview.widget.RecyclerView>
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:src="@drawable/money"></ImageView>
 
 
 </RelativeLayout>

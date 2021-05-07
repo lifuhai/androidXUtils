@@ -4,10 +4,17 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.lfh.frame.base.BaseActivity;
+import com.lfh.frame.utils.LogUtils;
 import com.lfh.utils.LuckView;
 import com.lfh.utils.R;
 import com.zackratos.ultimatebarx.library.UltimateBarX;
-
+/**
+ *
+ * @author lfh
+ * @date 2021/5/7
+ * Description : LuckActivity
+ *
+ */
 public class LuckActivity extends BaseActivity {
 
     private LuckView v1;
@@ -20,6 +27,7 @@ public class LuckActivity extends BaseActivity {
 //        barConfig.fitWindow(true).color(Color.RED).light(false);
 //        UltimateBarX.with(this).config(barConfig).applyStatusBar();
 
+        LogUtils.debug("cccccccc");
         UltimateBarX.with(this)
                 .transparent()
                 .applyStatusBar();

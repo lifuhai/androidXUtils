@@ -11,7 +11,9 @@ import com.lfh.frame.mvp.BasePresenter;
  * version:
  */
 public interface MvpTestContract {
+
     interface Model  extends BaseModel {
+        void  getTest(String s);
     }
 
     interface View extends BaseView {

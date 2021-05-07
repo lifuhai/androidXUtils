@@ -13,6 +13,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.jpeng.jptabbar.JPTabBar;
 import com.jpeng.jptabbar.OnTabSelectListener;
 import com.jpeng.jptabbar.anno.NorIcons;
+import com.jpeng.jptabbar.anno.SeleIcons;
 import com.jpeng.jptabbar.anno.Titles;
 import com.lfh.first.fragment.CarFragmet;
 import com.lfh.first.fragment.HeadFragmet;
@@ -33,7 +34,7 @@ public class TestActivity extends AppCompatActivity {
     @NorIcons
     private static final int[] mNormalIcons = {R.drawable.icon_home_h, R.drawable.icon_classification_h, R.drawable.icon_select_dui_hui, R.drawable.icon_car_h, R.drawable.icon_my_h};
 
-    //    @SeleIcons
+    @SeleIcons
     private static final int[] mSeleIcons = {R.drawable.icon_home_c, R.drawable.icon_classification_c, R.drawable.icon_select_orange, R.drawable.icon_car_c, R.drawable.icon_my_c};
     private int mCurrentItem = -1;
 

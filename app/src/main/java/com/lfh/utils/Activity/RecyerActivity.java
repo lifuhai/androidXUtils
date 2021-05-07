@@ -11,11 +11,9 @@ import java.util.List;
 public class RecyerActivity extends BaseActivity {
 
 
-    private RecyclerView recyclerView;
-
     @Override
     public void initView() {
-        recyclerView = findViewById(R.id.recycer);
+
         List<String>list = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
             list.add("测试"+i);
@@ -36,12 +34,6 @@ public class RecyerActivity extends BaseActivity {
          */
 
 
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        recyclerView=null;
     }
 
 

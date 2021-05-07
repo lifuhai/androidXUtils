@@ -69,6 +69,11 @@ public class ToolUtil {
     }
 
 
+    /**
+     * 转换成 json 字符串
+     * @param map
+     * @return  map
+     */
     public static String mapToJson(Map<String, String> map) {
         Set<String> keys = map.keySet();
         String key;

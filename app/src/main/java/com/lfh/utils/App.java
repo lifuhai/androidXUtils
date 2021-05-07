@@ -27,8 +27,8 @@ public class App extends Application {
 
 
         Recovery.getInstance()
-                .debug(false)
-                .recoverInBackground(false)
+                .debug(true)
+                .recoverInBackground(true)
                 .recoverStack(true)
                 .mainPage(MainActivity.class)
                 .recoverEnabled(true)

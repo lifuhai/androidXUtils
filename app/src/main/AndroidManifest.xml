@@ -17,7 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.LuckActivity"></activity>
+        <activity android:name=".Activity.LuckActivity" />
         <activity android:name=".Activity.MvpTestActivity" />
         <activity android:name=".Activity.RecyerActivity" />
         <activity android:name=".Activity.TestPreviewActivity" />

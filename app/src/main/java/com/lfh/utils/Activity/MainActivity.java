@@ -16,8 +16,18 @@ import com.lfh.frame.utils.ZhengZe_ID_And_Phone;
 import com.lfh.frame.base.BaseActivity;
 import com.lfh.utils.R;
 
+/**
+ *
+ * @author lfh
+ * @date 2021/5/7
+ * Description : MainActivity
+ *
+ */
+
+
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
+    private String TestAndroid;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,12 +47,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.id_card:
                 String msg = ZhengZe_ID_And_Phone.validate_effective("11292519900905XXXX");
 
-                if (msg.equals("1129251990090XXXX")) {
+                if ("1129251990090XXXX".equals(msg)) {
                     ToastMgr.builder.display(msg + "cccccccccccccccc");
                 } else {
                     ToastMgr.builder.display(msg);
                 }
-
                 break;
 
             case R.id.preview:
@@ -60,7 +69,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.recyer:
 
-                startActivity(new Intent(this,RecyerActivity.class));
+                startActivity(new Intent(this, RecyerActivity.class));
                 break;
 
             case R.id.mvp:
@@ -70,6 +79,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.luckNumber:
 
                 startActivity(new Intent(this, LuckActivity.class));
+                break;
+
+            default:
                 break;
         }
     }

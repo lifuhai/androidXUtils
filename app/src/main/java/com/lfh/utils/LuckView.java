@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
@@ -98,7 +99,8 @@ public class LuckView extends LinearLayout {
             if (p == x) {
                 view.setBackgroundColor(Color.BLUE);
             } else {
-                view.setBackgroundColor(Color.WHITE); // 标记当前转盘经过的位置
+                // 标记当前转盘经过的位置
+                view.setBackgroundColor(Color.WHITE);
             }
         }
 //       addViews();
@@ -158,5 +160,8 @@ public class LuckView extends LinearLayout {
     }
 
 
-
+    @Override
+    protected boolean drawChild(Canvas canvas, View child, long drawingTime) {
+        return super.drawChild(canvas, child, drawingTime);
+    }
 }

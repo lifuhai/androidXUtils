@@ -23,18 +23,14 @@ public abstract class BaseMvpActivity<P extends BasePresenterImp> extends BaseAc
 
     }
 
-
     @Override
     protected abstract int getContentViewId();
 
     protected abstract void initLocalData();
 
-
     @Override
     protected void initView() {
-
     }
-
 
     @Override
     public void onDestroy() {

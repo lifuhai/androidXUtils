@@ -78,7 +78,7 @@ public class RoundRelativeLayout extends RelativeLayout {
         setBackground(gd);
     }
 
-//    /**
+    //    /**
 //     * 设置边框宽度
 //     *
 //     * @param withSize 宽度
@@ -87,10 +87,9 @@ public class RoundRelativeLayout extends RelativeLayout {
 //        gd.setStroke(Tools.dp2px(mContext, 2), Color.parseColor("#ffffff"), 0, 0);
 //        invalidate();
 //    }
-    public  void  setSoidColor(int color){
+    public void setSoidColor(int color) {
 
-        this.solidColor=color;
-
+        this.solidColor = color;
         gd.setColor(solidColor);
         setBackground(gd);
         invalidate();
