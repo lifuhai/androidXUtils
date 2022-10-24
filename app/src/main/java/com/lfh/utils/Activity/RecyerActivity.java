@@ -22,16 +22,37 @@ public class RecyerActivity extends BaseActivity {
          *   list 分割线
          */
 
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        LinearItemDecoration linearItemDecoration = new LinearItemDecoration();
-//        linearItemDecoration.setColor(Color.RED);
-//        linearItemDecoration.setSpanSpace(ImageUtils.px2dp(10,this));
-//        recyclerView.addItemDecoration(linearItemDecoration);
+//       TestRvAdapter testRvAdapter = new TestRvAdapter();
+//         @SuppressLint("WrongConstant") final LinearLayoutManager layoutManager = new LinearLayoutManager(mContext, LinearLayout.VERTICAL, false);
+
+//         recyclerView.setAdapter(testRvAdapter);
+//         testRvAdapter.addData(list);
+//         recyclerView.setLayoutManager(layoutManager);
+//         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//             @Override
+//             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+//                 super.onScrollStateChanged(recyclerView, newState);
 
 
-        /**
-         *   gird 分割线
-         */
+//             }
+
+//             @Override
+//             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+//                 super.onScrolled(recyclerView, dx, dy);
+//                 mSuspensionHeight = tv_lv.getHeight();
+//                 View view = layoutManager.findViewByPosition(mCurrentPosition + 1);
+//                 if (view != null) {
+//                     if (view.getTop() <= mSuspensionHeight) {
+//                         tv_lv.setY(-(mSuspensionHeight - view.getTop()));
+//                     } else {
+//                         tv_lv.setY(0);
+//                     }
+//                 }
+//                 mCurrentPosition = layoutManager.findFirstVisibleItemPosition();
+//                 tv_lv.setText(list.get(mCurrentPosition).toString());
+
+//             }
+//         });
 
 
     }
