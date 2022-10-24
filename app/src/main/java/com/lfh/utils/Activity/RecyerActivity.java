@@ -10,7 +10,8 @@ import java.util.List;
 
 public class RecyerActivity extends BaseActivity {
 
-
+   private int mCurrentPosition = 0;
+    int mSuspensionHeight;
     @Override
     public void initView() {
 
